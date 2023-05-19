@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "cdce98ad-d966-4dc3-8b44-82a3df928668",
+		"name": "Lab-04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create playlist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"owner\": {\n    \"firstName\": \"Somebody\",\n    \"lastName\": \"Important\",\n    \"title\": \"Ms\",\n    \"picture\": {\n      \"thumbnail\": \"https://randomuser.me/api/portraits/thumb/women/64.jpg\",\n      \"large\": \"https://randomuser.me/api/portraits/women/64.jpg\",\n      \"medium\": \"https://randomuser.me/api/portraits/med/women/64.jpg\"\n    },\n    \"username\": \"somebodyimportant12345\"\n  },\n  \"visibility\": \"PRIVATE\",\n  \"name\": \"My first playlist\", \n  \"id\":\"mynewId\",\n  \"type\": \"playlist\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/playlist",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Playlist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/playlist/playlist::mynewId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlist",
+						"playlist::mynewId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update playlist",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"owner\": {\n    \"firstName\": \"SomebodyElse\",\n    \"lastName\": \"Important\",\n    \"title\": \"Ms\",\n    \"picture\": {\n      \"thumbnail\": \"https://randomuser.me/api/portraits/thumb/women/64.jpg\",\n      \"large\": \"https://randomuser.me/api/portraits/women/64.jpg\",\n      \"medium\": \"https://randomuser.me/api/portraits/med/women/64.jpg\"\n    },\n    \"username\": \"somebodyimportant12345\"\n  },\n  \"visibility\": \"PRIVATE\",\n  \"name\": \"My first playlist\",\n  \"id\":\"mynewId\",\n  \"type\": \"playlist\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/playlist/playlist::mynewId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlist",
+						"playlist::mynewId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete playlist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/playlist/playlist::mynewId",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"playlist",
+						"playlist::mynewId"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
